@@ -11,7 +11,7 @@ assert sys.version_info >= (3,4), 'This script requires at least Python 3.4'
 
 logging.basicConfig(format='[%(filename)s:%(lineno)d] %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
-
+#made the window bigger to reduce difficulty and let players know what's next
 screen_size = (1000,800)
 FPS = 60
 gravity = 2
