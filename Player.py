@@ -18,6 +18,9 @@ class Player(pygame.sprite.Sprite):
 		self.ramp_up = 1
 		self.max_dx = 10
 
+
+		self.rotation = 0
+
 		self.jump_force = 40
 		self.gravity = gravity
 		self.friction = friction
@@ -56,8 +59,11 @@ class Player(pygame.sprite.Sprite):
 			
 		if not self.on_ground:
 			self.dy += self.gravity
+			pygame.transform.rotate(self.image, self.rotation)
+			self.rotation += 5
 		else:
 			self.dy = 0
+			self.rotation = 0
 			
 		if self.rect.x <= 0:
 			self.rect.x = 0
